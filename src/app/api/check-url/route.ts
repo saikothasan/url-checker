@@ -5,7 +5,14 @@ export const runtime = "nodejs"
 
 export async function POST(request: NextRequest) {
   try {
-    const { url } = await request.json()
+    // Type assertion with interface
+    interface RequestBody {
+      url: string
+    }
+
+    // Parse the request body
+    const body = (await request.json()) as RequestBody
+    const { url } = body
 
     if (!url || typeof url !== "string") {
       return NextResponse.json({ error: "Invalid URL provided" }, { status: 400 })
