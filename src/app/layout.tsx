@@ -12,9 +12,75 @@ export const metadata = {
     "Quickly check the status of hundreds of URLs at once. Verify HTTP status codes, response times, redirects, and SEO elements like titles and meta descriptions.",
   keywords:
     "URL checker, bulk URL validator, SEO tool, website status checker, HTTP status codes, redirect checker, broken link finder",
+  authors: [{ name: "saikothasan" }],
+  creator: "saikothasan",
+  publisher: "saikothasan",
+  metadataBase: new URL("https://url-check.pages.dev/"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://url-check.pages.dev/",
+    title: "Bulk URL Checker - Check Hundreds of URLs at Once",
+    description:
+      "Quickly check the status of hundreds of URLs at once. Verify HTTP status codes, response times, redirects, and SEO elements.",
+    siteName: "Bulk URL Checker",
+    images: [
+      {
+        url: "https://url-check.pages.dev/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Bulk URL Checker - Check Hundreds of URLs at Once",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bulk URL Checker - Check Hundreds of URLs at Once",
+    description:
+      "Quickly check the status of hundreds of URLs at once. Verify HTTP status codes, response times, redirects, and SEO elements.",
+    images: ["https://url-check.pages.dev/og-image.png"],
+  },
   verification: {
     google: "YOUR-GOOGLE-VERIFICATION-CODE", // Replace with your actual verification code
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#5bbad5",
+      },
+    ],
+  },
+  manifest: "https://url-check.pages.dev/site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
+  },
+}
+
+// Add link to the head element
+export const viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
