@@ -28,7 +28,7 @@ export const metadata = {
     siteName: "Bulk URL Checker",
     images: [
       {
-        url: "https://url-check.pages.dev/og-image.png",
+        url: "https://url-check.pages.dev/website_4810757.png",
         width: 1200,
         height: 630,
         alt: "Bulk URL Checker - Check Hundreds of URLs at Once",
@@ -40,7 +40,7 @@ export const metadata = {
     title: "Bulk URL Checker - Check Hundreds of URLs at Once",
     description:
       "Quickly check the status of hundreds of URLs at once. Verify HTTP status codes, response times, redirects, and SEO elements.",
-    images: ["https://url-check.pages.dev/og-image.png"],
+    images: ["https://url-check.pages.dev/website_4810757.png"],
   },
   verification: {
     google: "YOUR-GOOGLE-VERIFICATION-CODE", // Replace with your actual verification code
@@ -48,15 +48,15 @@ export const metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png", sizes: "32x32" },
-      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
-      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/web-app-manifest-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/web-app-manifest-512x512.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     other: [
       {
         rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
+        url: "/favicon.svg",
         color: "#5bbad5",
       },
     ],
