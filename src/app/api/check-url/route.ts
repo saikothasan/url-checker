@@ -1,7 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { setTimeout } from "timers/promises"
 
-export const runtime = "nodejs"
+export const runtime = "edge"
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,17 +20,19 @@ export async function POST(request: NextRequest) {
     const startTime = performance.now()
 
     try {
-      // Use node-fetch with a timeout
+      // Create an AbortController for timeout
       const controller = new AbortController()
-      const timeoutId = setTimeout(10000, null, { signal: controller.signal }).then(() => {
+      const { signal } = controller
+
+      // Set timeout for the fetch request
+      const timeoutId = setTimeout(() => {
         controller.abort()
-        throw new Error("Request timeout")
-      })
+      }, 10000)
 
       const response = await fetch(url, {
         method: "HEAD",
         redirect: "follow",
-        signal: controller.signal,
+        signal,
         headers: {
           "User-Agent": "Mozilla/5.0 (compatible; URLChecker/1.0; +https://example.com)",
           Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -42,7 +43,7 @@ export async function POST(request: NextRequest) {
       })
 
       // Clear the timeout
-      controller.abort()
+      clearTimeout(timeoutId)
 
       const endTime = performance.now()
       const responseTime = Math.round(endTime - startTime)
@@ -64,15 +65,23 @@ export async function POST(request: NextRequest) {
         response.headers.get("content-type")?.includes("text/html")
       ) {
         try {
+          // Create a new controller for the HTML request
+          const htmlController = new AbortController()
+          const htmlTimeoutId = setTimeout(() => {
+            htmlController.abort()
+          }, 10000)
+
           // Make a GET request to get the HTML content
           const htmlResponse = await fetch(url, {
             method: "GET",
             redirect: "follow",
-            signal: controller.signal,
+            signal: htmlController.signal,
             headers: {
               "User-Agent": "Mozilla/5.0 (compatible; URLChecker/1.0; +https://example.com)",
             },
           })
+
+          clearTimeout(htmlTimeoutId)
 
           const html = await htmlResponse.text()
 
