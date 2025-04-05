@@ -43,7 +43,7 @@ export const metadata = {
     images: ["https://url-check.pages.dev/website_4810757.png"],
   },
   verification: {
-    google: "YOUR-GOOGLE-VERIFICATION-CODE", // Replace with your actual verification code
+    google: "4YhJWWSCtlpQ4MAcEnCz4saErM6PDQ55Doh9x1YrFVQ", // Replace with your actual verification code
   },
   icons: {
     icon: [
