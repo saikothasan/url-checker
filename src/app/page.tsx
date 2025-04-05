@@ -18,6 +18,7 @@ import {
   Link2,
   AlertTriangle,
   BarChart,
+  Github,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -31,6 +32,7 @@ import { ToastAction } from "@/components/ui/toast"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 type UrlStatus = {
   url: string
@@ -565,7 +567,10 @@ export default function UrlChecker() {
 
   return (
     <div className="container mx-auto py-10 px-4 max-w-5xl">
-      <header className="mb-8 text-center">
+      <header className="mb-8 text-center relative">
+        <div className="absolute right-0 top-0">
+          <ThemeToggle />
+        </div>
         <h1 className="text-3xl font-bold mb-2">Bulk URL Status Checker</h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Check the status of hundreds of URLs at once. Verify HTTP status codes, response times, redirects, and SEO
@@ -848,6 +853,18 @@ vercel.com, nextjs.org"
       <footer className="mt-10 text-center text-sm text-muted-foreground">
         <p>Bulk URL Checker - Check the status of hundreds of URLs at once</p>
         <p className="mt-1">Perfect for SEO professionals, web developers, and content managers</p>
+        <div className="mt-4 flex justify-center">
+          <a
+            href="https://github.com/saikothasan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="GitHub Profile"
+          >
+            <Github className="h-5 w-5" />
+            <span>saikothasan</span>
+          </a>
+        </div>
       </footer>
     </div>
   )
