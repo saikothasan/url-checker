@@ -46,6 +46,10 @@ type UrlStatus = {
   canonical?: string
 }
 
+interface ErrorResponse {
+  error: string
+}
+
 export default function UrlChecker() {
   const [urls, setUrls] = useState<string>("")
   const [results, setResults] = useState<UrlStatus[]>([])
@@ -95,7 +99,7 @@ export default function UrlChecker() {
       })
 
       if (!response.ok) {
-        const errorData = await response.json()
+        const errorData = (await response.json()) as ErrorResponse
         throw new Error(errorData.error || "API request failed")
       }
 
