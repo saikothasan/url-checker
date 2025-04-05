@@ -96,14 +96,14 @@ export default function RootLayout({
           <Toaster />
         </ThemeProvider>
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KF7R70Y1WP" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', 'G-KF7R70Y1WP');
           `,
           }}
         />
